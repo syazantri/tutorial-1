@@ -50,15 +50,15 @@ tasks.register<Test>("unitTest") {
     }
 }
 
-tasks.register<Test>("unitTest") {
-    description = "Runs unit tests."
-    group = "verification"
-
-    filter {
-        excludeTestsMatching("*FunctionalTest")
-    }
-}
-
-tasks.withType<Test>().configureEach {
-    useJUnitPlatform()
-}
+//tasks.register<Test>("unitTest") {
+//    description = "Runs unit tests."
+//    group = "verification"
+//
+//    filter {
+//        excludeTestsMatching("*FunctionalTest")
+//    }
+//}
+//
+//tasks.withType<Test>().configureEach {
+//    useJUnitPlatform()
+//}
