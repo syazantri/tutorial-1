@@ -63,4 +63,46 @@ class ProductRepositoryTest {
         assertEquals(product2.getProductId(), savedProduct.getProductId());
         assertFalse (productIterator.hasNext());
     }
+
+    @Test
+    void testEdit() {
+        Product product = new Product();
+        product.setProductName("Mama ini tes ngedit produk");
+        product.setProductQuantity(888888);
+        productRepository.create(product);
+
+        product.setProductName("Keubah gak yah");
+        product.setProductQuantity(909009017);
+        Product editedProduct = productRepository.edit(product);
+
+        assertEquals("Keubah gak yah", editedProduct.getProductName());
+        assertEquals(909009017, editedProduct.getProductQuantity());
+    }
+
+    @Test
+    void testFindById() {
+        Product product = new Product();
+        product.setProductName("Cari aku donk");
+        product.setProductQuantity(77);
+        productRepository.create(product);
+
+        Product foundProduct = productRepository.findById(product.getProductId());
+
+        assertNotNull(foundProduct);
+        assertEquals(product.getProductId(), foundProduct.getProductId());
+        assertEquals(product.getProductName(), foundProduct.getProductName());
+        assertEquals(product.getProductQuantity(), foundProduct.getProductQuantity());
+    }
+
+    @Test
+    void testDelete() {
+        Product product = new Product();
+        product.setProductName("Mama aku tes dulu yah");
+        product.setProductQuantity(14141414);
+        productRepository.create(product);
+
+        productRepository.delete(product.getProductId());
+
+        assertNull(productRepository.findById(product.getProductId()));
+    }
 }

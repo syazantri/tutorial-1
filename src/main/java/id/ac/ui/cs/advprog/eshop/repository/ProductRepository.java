@@ -55,7 +55,7 @@ public class ProductRepository {
     public void delete(String id) {
         Product toBeDeleted = findById(id);
         productData.remove(toBeDeleted);
-        idToProductMap.remove(toBeDeleted);
-        nameToProductMap.remove(toBeDeleted);
+        idToProductMap.remove(id);
+        nameToProductMap.remove(toBeDeleted.getProductName());
     }
 }
