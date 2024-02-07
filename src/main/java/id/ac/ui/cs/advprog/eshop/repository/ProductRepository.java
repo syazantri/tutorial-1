@@ -51,4 +51,11 @@ public class ProductRepository {
     public Product findById(String id) {
         return idToProductMap.get(id);
     }
+
+    public void delete(String id) {
+        Product toBeDeleted = findById(id);
+        productData.remove(toBeDeleted);
+        idToProductMap.remove(toBeDeleted);
+        nameToProductMap.remove(toBeDeleted);
+    }
 }
