@@ -46,16 +46,18 @@
         }
 
         .btn-create-product {
-            color: #ffb536;
-            border: 2px solid #ffb536;
-            font-size: 16px;
-            transition: color 0.3s, border-color 0.3s;
+            background-color: #ffc39e;
+            border-color: #6A0DAD;
+            font-size: 18px; /* Adjusted font size */
+            padding: 8px 16px; /* Adjusted padding */
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4d2d69;
         }
-
         .btn-create-product:hover {
-            color: #ffffff;
-            background-color: #FFA500;
-            border-color: #FFA500;
+            background-color: #ffec8b;
+            border-color: #7E57C2;
+            color: #4d2d69;
         }
         h2 {
             text-align: center;
@@ -67,8 +69,9 @@
 <body>
 
 <div class="container my-2">
+    <br>
     <h2>Product List</h2>
-    <a th:href="@{/product/create}" class="btn btn-create-product btn-sm mb-3">Create Product</a>
+    <a th:href="@{/product/create}" class="btn btn-create-product mb-3">Create Product</a>
 
     <table class="table table-striped table-responsive-md">
         <thead>
