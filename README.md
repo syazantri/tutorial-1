@@ -3,8 +3,16 @@
     Syazantri Salsabila - 2206029443 - AdvProg B
     <br>
     <a align="center" href="https://eshop-adpro-syazantri.koyeb.app/">View Site 🔗</a>
+    
 </p>
+
 <br>
+<p>📥 Sonarcloud Summary:</p>
+    
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=syazantri_tutorial-1&metric=coverage)](https://sonarcloud.io/summary/new_code?id=syazantri_tutorial-1)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=syazantri_tutorial-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=syazantri_tutorial-1)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=syazantri_tutorial-1&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=syazantri_tutorial-1)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=syazantri_tutorial-1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=syazantri_tutorial-1)
 
 <details>
     <summary>1️⃣ Module 1 - Coding Standards 💯</summary>
