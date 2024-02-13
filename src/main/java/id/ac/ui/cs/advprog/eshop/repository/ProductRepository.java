@@ -5,14 +5,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Iterator;
 import java.util.List;
 
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
-    private HashMap<String, Product> nameToProductMap = new HashMap<>();
-    private HashMap<String, Product> idToProductMap = new HashMap<>();
+    private Map<String, Product> nameToProductMap = new HashMap<>();
+    private Map<String, Product> idToProductMap = new HashMap<>();
     int idCounter = 0;
 
     public Product create(Product product) {
