@@ -20,20 +20,37 @@ class ProductRepositoryTest {
     @BeforeEach
     void setUp() {
     }
-    @Test
-    void testCreateAndFind() {
-        Product product = new Product();
-        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
-        product.setProductName("Sampo Cap Bambang");
-        product.setProductQuantity(100);
-        productRepository.create(product);
 
-        Iterator<Product> productIterator = productRepository.findAll();
-        assertTrue(productIterator.hasNext());
-        Product savedProduct = productIterator.next();
-        assertEquals(product.getProductId(), savedProduct.getProductId());
-        assertEquals(product.getProductName(), savedProduct.getProductName());
-        assertEquals(product.getProductQuantity(), savedProduct.getProductQuantity());
+    @Test
+    void testCreate_NewProduct() {
+        Product product = new Product();
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(1);
+
+        Product createdProduct = productRepository.create(product);
+
+        assertNotNull(createdProduct);
+        assertEquals(product.getProductName(), createdProduct.getProductName());
+        assertEquals(product.getProductQuantity(), createdProduct.getProductQuantity());
+    }
+
+    @Test
+    void testCreate_ExistingProduct() {
+        Product existingProduct = new Product();
+        existingProduct.setProductName("Produk 2");
+        existingProduct.setProductQuantity(100);
+        productRepository.create(existingProduct);
+
+        Product productBaru = new Product();
+        productBaru.setProductName("Produk 2");
+        productBaru.setProductQuantity(150);
+
+        Product updatedProduct = productRepository.create(productBaru);
+
+        assertNotNull(updatedProduct);
+        assertEquals(existingProduct.getProductId(), updatedProduct.getProductId()); // The ID should remain the same
+        assertEquals(existingProduct.getProductName(), updatedProduct.getProductName());
+        assertEquals(existingProduct.getProductQuantity(), updatedProduct.getProductQuantity()); // Quantity should be updated
     }
 
     @Test
@@ -52,7 +69,7 @@ class ProductRepositoryTest {
         Product product2 = new Product();
         product2.setProductId("a0f9de46-90b1-437d-a0bf-d0821dde9096");
         product2.setProductName("Sampo Cap Usep");
-        product2.setProductQuantity(50);
+        product2.setProductQuantity(150);
         productRepository.create(product2);
 
         Iterator<Product> productIterator = productRepository.findAll();
@@ -77,6 +94,17 @@ class ProductRepositoryTest {
 
         assertEquals("Keubah gak yah", editedProduct.getProductName());
         assertEquals(909009017, editedProduct.getProductQuantity());
+    }
+
+    @Test
+    void testEditIfNull() {
+        Product fakeProduct = new Product();
+        fakeProduct.setProductName("Nonexistent Product");
+        fakeProduct.setProductQuantity(10);
+
+        Product editedProduct = productRepository.edit(fakeProduct);
+
+        assertNull(editedProduct);
     }
 
     @Test
