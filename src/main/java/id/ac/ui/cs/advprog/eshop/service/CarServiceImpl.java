@@ -41,6 +41,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void deleteCarById(String carId) {
-        // TODO Auto-generated method stub carRepository.delete(carId);
+        // TODO Auto-generated method stub
+        carRepository.delete(carId);
     }
 }
