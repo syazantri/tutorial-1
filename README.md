@@ -62,3 +62,17 @@ Dalam menginput quantity barang, saya telah memastikan bahwa inputnya berupa ang
 Menurut saya, implementasi kode saya sekarang sudah menerapkan definisi dari Continuous Integration and Continuous Deployment (CI/CD). Pertama untuk CI, di dalam kode saya sudah ada beberapa file yml seperti ci.yml, pmd_action.yml, dan scorecard.yml. File-file yml tersebut menjadikan ketika ada push kode ke github (ada perubahan kode), akan dilakukan pengecekan dengan run testing yang telah dibuat, serta code scanning analysis. Lalu untuk CD walaupun tidak membuat workflow, mendeploy dengan koyeb memungkinkan saya untuk melakukan CD. Hal itu dapat terlihat ketika ada perubahan yang dipush ke repo github ke branch masternya, koyeb langsung melakukan autodeploy berdasarkan kode terbaru yang telah dipush tersebut.
 
 </details>
+<details>
+    <summary>1️⃣ Module 3 - Maintainability & OO Principles </summary>
+    1. SOLID Principle <br>
+    - Single Responsibility Principle (SRP) <br>
+    SRP adalah prinsip untuk. Pada kode saya, di before solid sempat melanggar aturan SRP sehingga ada beberapa bagian kode yang saya ubah. Bagian tersebut adalah pemisahan ProductController dan CarController. Selain itu 
+    - Open-Closed Principle (OCP) <br>
+    - Liskov Substitution Principle (LSP) <br>
+    - Interface Segregation Principle (ISP) <br>
+    - Dependency Inversions Principle (DIP) <br>
+    2. Keuntungan menerapkan SOLID Principle <br>
+    test <br>
+    3. Kerugian tidak menerapkan SOLID Priinciple <br>
+    test <br>
+</details>
