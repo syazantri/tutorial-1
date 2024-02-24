@@ -62,3 +62,28 @@ Dalam menginput quantity barang, saya telah memastikan bahwa inputnya berupa ang
 Menurut saya, implementasi kode saya sekarang sudah menerapkan definisi dari Continuous Integration and Continuous Deployment (CI/CD). Pertama untuk CI, di dalam kode saya sudah ada beberapa file yml seperti ci.yml, pmd_action.yml, dan scorecard.yml. File-file yml tersebut menjadikan ketika ada push kode ke github (ada perubahan kode), akan dilakukan pengecekan dengan run testing yang telah dibuat, serta code scanning analysis. Lalu untuk CD walaupun tidak membuat workflow, mendeploy dengan koyeb memungkinkan saya untuk melakukan CD. Hal itu dapat terlihat ketika ada perubahan yang dipush ke repo github ke branch masternya, koyeb langsung melakukan autodeploy berdasarkan kode terbaru yang telah dipush tersebut.
 
 </details>
+<details>
+    <summary>1️⃣ Module 3 - Maintainability & OO Principles 🌙</summary>
+    1. SOLID Principle <br>
+    - Single Responsibility Principle (SRP) <br>
+    SRP adalah prinsip yang menekankan bahwa class seharusnya hanya memiliki satu tanggung jawab atau fungsionalitas utama. Pada kode saya, di before solid sempat melanggar aturan SRP sehingga ada beberapa bagian kode yang saya ubah. Bagian tersebut adalah pemisahan ProductController dan CarController. Selain itu saya juga menghapus CarController extends ProductController, agar class CarController bisa memiliki fungsionalitas seputar car saja.<br> <br>
+    - Open-Closed Principle (OCP) <br> 
+    OCP berarti entitas perangkat lunak (kelas, modul, dll.) seharusnya dapat diperluas tanpa mengubah kode yang sudah ada. Saya menerapkan prinsip ini dengan cara mengubah function edit Car sehingga ketika mengedit tidak set masing-masing atributnya, tetapi langsung dimasukkan ke list carData. Dengan begitu, ketika ada class mengextend Car dengan atribut berbeda (tidak hanya nama, warna, dan jumlah) akan dapat memakai fungsi edit tersebut.<br> <br>
+    - Liskov Substitution Principle (LSP) <br>
+    LSP berarti objek dari kelas turunan harus bisa digunakan sebagai pengganti objek kelas induk tanpa mengubah kebenaran program. Pada kode saya tidak terdapat inheritance sehingga tidak bisa melanggar ataupun menerapkan LSP. <br> <br>
+    - Interface Segregation Principle (ISP) <br>
+    ISP artinya tidak boleh dipaksa untuk mengimplementasikan interface yang tidak relevan bagi mereka. Kode saya telah menerapkan ISP dengan cara CarServiceImpl mengimplementasikan CarService, sementara ProductServiceImpl mengimplementasikan ProductService. Masing-masing saling mengimplementasikan interface yang relevan. <br>
+    - Dependency Inversions Principle (DIP) <br> <br>
+    DIP memiliki arti modul level tinggi tidak boleh bergantung pada modul-level rendah. Keduanya harus bergantung pada abstraksi. Pada before-solid, sempat ada bagian kode saya yang tidak menerapkan prinsip ini. Maka saya memperbaikinya dengan cara mengubah import CarServiceImpl menjadi import CarService pada CarController. Dengan begitu CarController menjadi bergantung kepada CarService yang lebih menggambarkan abstraksi. <br> <br>
+    2. Keuntungan menerapkan SOLID Principle <br>
+    Keuntungan menerapkan SOLID Principle adalah: <br>
+    - Comprehensible <br>
+    Dengan menerapkan SRP, contohnya memisahkan Controller Home, Product dan Car membuat kode lebih mudah dimengerti karena ketika dilihat suatu class controller dapat jelas dimengerti controller tersebut untuk apa.<br> <br>
+    - Extensibile <br>
+    Ketika menerapkan OCP, contohnya dengan membuat fungsi edit Car tidak diset per atribut, membuat kode saya extensible karena ketika ada class mengextend Car dengan atribut berbeda (tidak hanya nama, warna, dan jumlah) akan dapat memakai fungsi edit tersebut. <br> <br>
+    3. Kerugian tidak menerapkan SOLID Priinciple <br>
+    - Tidak Comprehensible <br>
+    Jika tidak menerapkan SRP, misalnya menggabungkan Controller Home, Product dan Car membuat ambigu yang melihat kode karena sulit dimengerti suatu class controller itu maksudnya untuk apa.<br> <br>
+    - Tidak Extensible <br>
+    Jika tidak menerapkan OCP, contohnya dengan membuat fungsi edit Car diset per atribut, membuat kode saya tidak extensible karena ketika ada class mengextend Car dengan atribut berbeda (tidak hanya nama, warna, dan jumlah) akan sulit memakai fungsi edit tersebut. <br> <br>
+</details>
