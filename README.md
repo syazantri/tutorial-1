@@ -63,7 +63,7 @@ Menurut saya, implementasi kode saya sekarang sudah menerapkan definisi dari Con
 
 </details>
 <details>
-    <summary>1️⃣ Module 3 - Maintainability & OO Principles 🌙</summary>
+    <summary>3️⃣ Module 3 - Maintainability & OO Principles 🌙</summary>
     1. SOLID Principle <br>
     - Single Responsibility Principle (SRP) <br>
     SRP adalah prinsip yang menekankan bahwa class seharusnya hanya memiliki satu tanggung jawab atau fungsionalitas utama. Pada kode saya, di before solid sempat melanggar aturan SRP sehingga ada beberapa bagian kode yang saya ubah. Bagian tersebut adalah pemisahan ProductController dan CarController. Selain itu saya juga menghapus CarController extends ProductController, agar class CarController bisa memiliki fungsionalitas seputar car saja.<br> <br>
