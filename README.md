@@ -87,3 +87,20 @@ Menurut saya, implementasi kode saya sekarang sudah menerapkan definisi dari Con
     - Tidak Extensible <br>
     Jika tidak menerapkan OCP, contohnya dengan membuat fungsi edit Car diset per atribut, membuat kode saya tidak extensible karena ketika ada class mengextend Car dengan atribut berbeda (tidak hanya nama, warna, dan jumlah) akan sulit memakai fungsi edit tersebut. <br> <br>
 </details>
+
+<details>
+    <summary⃣> 4️⃣ Module 4 - Refactoring and TDD 💥</summary>
+1. Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests. <br>
+Menurut saya metode TDD ini ada dampak baik dan buruknya bagi saya. Saya belum terbiasa membuat test terlebih dahulu tanpa melihat apa yang mau ditest. Hal itu menyebabkan saya beberapa kali kesulitan dalam memikirkan apa saja test yang perlu dibuat. Namun mungkin sebenarnya jiika sudah terbiasa, metode TDD ini akan menghemat waktu untuk membuat program yang clean, karena kita terpaksa harus memikirkan kemungkinan-kemungkinan terburuk yang akan terjadi pada program. Kalau untuk test yang saya buat sendiri, menurut jacocotestReport, untuk fitur Payment, kode saya sudah mencapai code coverage 100%, tetapi bisa saja ini karena testing saya yang hanya mengcover class-class payment yang telah dibuat tetapi belum meliputi kemungkinan terburuk di luar class tersebut. <hr>
+2. You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests. <br>
+- Fast <br>
+Menurut saya tests di tutorial telah menerapkan prinsip ini karena sudah membagi-bagi test sesuai keperluan dan porsinya sehingga test bisa berjalan lebih cepat.<br>
+- Isolated/Independent <br>
+Menurut saya tests yang diibuat di tutorial telah menerapkan prinsip isolated karena setiiap test tidak bergantung test lainnya. Hal ini bisa terjadi karena saya telah melakkan setUp di setiap test.
+- Repeatable <br>
+Menurut saya sudah terpenuhi karena sudah isolated.<br>
+- Self Validating <br>
+Menurut saya tests yang diibuat di tutorial telah menerapkan prinsip self validating karena sudah strict validasinya, tidak menggunakan print ketika ada error.<br>
+- Thorough/Timely <br>
+Menurut saya sudah terpenuhi karena di tutorial sudah dibuat happy dan unhappy test<br>
+</details>
